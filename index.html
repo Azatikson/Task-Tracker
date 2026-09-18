@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Таск-трекер</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Таск-трекер</h1>
+            </div>
+            <div class="theme-toggle">
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <span class="slider-icon">🌙</span>
+                    </span>
+                </label>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Поиск задач..." autocomplete="off">
+            </div>
+            <div class="progress-column-select">
+                <label for="done-column-select">Колонка для прогресса:</label>
+                <select id="done-column-select"></select>
+            </div>
+            <div class="progress-container">
+                <div class="progress-text">Выполнено: <span id="progress-percent">0%</span></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+            <div class="history-container">
+                <button id="history-toggle" class="history-toggle">📜 История</button>
+                <div id="history-content" class="history-content hidden">
+                    <ul id="history-list"></ul>
+                    <button id="clear-history" class="clear-history-btn">Очистить</button>
+                </div>
+            </div>
+        </aside>
+        <main class="main-content">
+            <div class="board" id="board"></div>
+            <button id="add-column-btn" class="add-column-btn">+ Добавить колонку</button>
+        </main>
+    </div>
+    <div id="label-modal" class="modal">
+        <div class="modal-content">
+            <button id="label-modal-close" class="modal-close" aria-label="Закрыть">×</button>
+            <h3>Выберите метку</h3>
+            <div class="label-options">
+                <span class="label-option" data-color="red"></span>
+                <span class="label-option" data-color="blue"></span>
+                <span class="label-option" data-color="green"></span>
+                <span class="label-option" data-color="yellow"></span>
+                <span class="label-option" data-color="purple"></span>
+                <span class="label-option" data-color="none"></span>
+            </div>
+        </div>
+    </div>
+    <div id="column-color-modal" class="modal">
+        <div class="modal-content">
+            <button id="column-color-modal-close" class="modal-close" aria-label="Закрыть">×</button>
+            <h3>Цвет колонки</h3>
+            <div class="color-options">
+                <span class="color-option" data-color="red"></span>
+                <span class="color-option" data-color="blue"></span>
+                <span class="color-option" data-color="green"></span>
+                <span class="color-option" data-color="yellow"></span>
+                <span class="color-option" data-color="purple"></span>
+                <span class="color-option" data-color="orange"></span>
+                <span class="color-option" data-color="pink"></span>
+                <span class="color-option" data-color="none"></span>
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
